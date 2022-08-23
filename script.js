@@ -369,8 +369,10 @@ function getAllNotes() {
         });
       }   
   }
-  const sortedNotes = notes.sort((a, b) => new Date(a.date) - new Date(b.date));
-  return sortedNotes;
+  notes =notes.sort(function (a, b) {
+    return a.date.localeCompare(b.date);
+});
+  return notes;
 }
 console.log(notes);
 
